@@ -1,0 +1,41 @@
+<div style="width:50%; display:inline-block">
+  <h1>GraphQL Rankings</h1>
+
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+  *ngIf="gRankings">
+    <tr>
+      <th>Rank</th>
+      <th>Date</th>
+      <th>Points</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <tr *ngFor="let ranking of gRankings">
+      <td>{{ranking.rank}}<td>
+      <td>{{ranking.ranking_date}}</td>
+      <td>{{ranking.points}}</td>
+      <td>{{ranking.playerinfo.name_first}}</td>
+      <td>{{ranking.playerinfo.name_list}}</td>
+    </tr>
+  </table>
+</div>
+<div style="width:50%; display: inline-block;">
+  <h1>REST Rankings</h1>
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+  *ngIf="rRankings">
+    <tr>
+      <th>Rank</th>
+      <th>Date</th>
+      <th>Points</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <tr *ngFor="let ranking of rRankings">
+      <td>{{ranking.rank}}<td>
+      <td>{{ranking.ranking_date}}</td>
+      <td>{{ranking.points}}</td>
+      <td>{{ranking.playerinfo[0].name_first}}</td>
+      <td>{{ranking.playerinfo[0].name_list}}</td>
+    </tr>
+  </table>
+</div>
